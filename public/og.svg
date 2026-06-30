@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#1c3a34"/>
+  <g stroke="#7f9686" stroke-width="2" opacity="0.22" fill="none" stroke-linecap="round">
+    <path d="M-40 130 C 240 70, 440 200, 740 130 S 1200 60, 1300 150"/>
+    <path d="M-40 210 C 250 140, 460 290, 760 210 S 1210 130, 1300 230"/>
+    <path d="M-40 300 C 260 220, 480 390, 780 300 S 1220 210, 1300 320"/>
+    <path d="M-40 400 C 270 310, 500 500, 790 400 S 1230 300, 1300 420"/>
+    <path d="M-40 510 C 280 410, 510 620, 800 510 S 1240 400, 1300 530"/>
+  </g>
+  <text x="90" y="250" fill="#faf6ee" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="500">Bayside Remedial Therapy</text>
+  <text x="92" y="320" fill="#c4892f" font-family="Georgia, serif" font-size="40">Remedial Massage · Mount Martha</text>
+  <text x="92" y="392" fill="#c8d3c8" font-family="Helvetica, Arial, sans-serif" font-size="28">Treatment-focused massage on the Mornington Peninsula</text>
+  <g transform="translate(92 470)">
+    <rect width="270" height="58" rx="29" fill="#c4892f"/>
+    <text x="135" y="38" fill="#faf6ee" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="600" text-anchor="middle">Book an appointment</text>
+  </g>
+</svg>

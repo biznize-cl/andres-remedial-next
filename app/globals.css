@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
+/*
+  Theme — "Coastal layers"
+  Deep eucalyptus-teal brand over warm limestone, sage mid-tones,
+  and a single restrained honey/ochre accent for calls-to-action.
+  Tailwind v4 reads these tokens and generates utilities like
+  bg-brand, text-ink, bg-limestone, text-honey, etc.
+*/
+@theme {
+  --color-brand: #1c3a34; /* deep eucalyptus-teal — dominant brand */
+  --color-brand-dark: #122c27;
+  --color-brand-soft: #2e5249;
+  --color-sage: #7f9686;
+  --color-sage-light: #c8d3c8;
+  --color-honey: #c4892f; /* warm ochre accent (not terracotta) */
+  --color-honey-dark: #a3711f;
+  --color-limestone: #f3eee3; /* warm page background */
+  --color-cream: #faf6ee; /* lighter card surface */
+  --color-ink: #1d2a25; /* primary text — deep teal-charcoal */
+  --color-ink-soft: #51605a; /* secondary text */
+  --color-line: #e2dccd; /* hairline borders on light */
+
+  --font-display: var(--font-spectral);
+  --font-sans: var(--font-hanken);
+
+  --radius-xl2: 1.75rem;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-limestone);
+  --foreground: var(--color-ink);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Honor users who prefer reduced motion across the whole site. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Gentle scroll-reveal — opt-in via the Reveal component. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Slow drift for the hero contour signature. */
+@keyframes contour-drift {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-14px);
+  }
+}
+.contour-drift {
+  animation: contour-drift 14s ease-in-out infinite alternate;
+}
+
+/* Eyebrow label — small caps tracking used above section headings. */
+.eyebrow {
+  font-family: var(--font-sans), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 600;
 }
