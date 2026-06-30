@@ -62,11 +62,24 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-cream/10 pt-6 text-xs text-sage-light/80 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            &copy; {year} {site.businessName}. {site.abn}.
+        <div className="mt-12 border-t border-cream/10 pt-6">
+          <div className="flex flex-col gap-2 text-xs text-sage-light/80 sm:flex-row sm:items-center sm:justify-between">
+            <p>
+              &copy; {year} {site.businessName}. {site.abn}.
+            </p>
+            <p>Mornington · Mornington Peninsula · Victoria</p>
+          </div>
+          <p className="mt-4 text-center text-xs text-sage-light/60">
+            Designed &amp; developed by{" "}
+            <a
+              href="https://www.biznize.cl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-sage-light underline-offset-2 hover:text-honey"
+            >
+              Biznize
+            </a>
           </p>
-          <p>Mount Martha · Mornington Peninsula · Victoria</p>
         </div>
       </Container>
     </footer>
