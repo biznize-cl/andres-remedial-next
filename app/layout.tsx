@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { Header } from "@/components/sections/Header";
 import { Footer } from "@/components/sections/Footer";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Display: Spectral — a calm, low-contrast literary serif (deliberately not
 // the Playfair/Fraunces default). Body: Hanken Grotesk — a warm humanist sans.
@@ -78,6 +79,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
