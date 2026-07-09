@@ -27,9 +27,10 @@ export function Footer() {
             />
             <p className="mt-4 font-display text-xl text-cream">{site.businessName}</p>
             <p className="mt-3 text-sm leading-relaxed">
-              Remedial massage therapy in {site.address.suburb}, on the
-              Mornington Peninsula. Treatment-focused, evidence-based, and
-              tailored to you.
+              Treatment-focused remedial massage on the Mornington Peninsula.
+            </p>
+            <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-sage-light">
+              Restore • Recover • Move
             </p>
           </div>
 
