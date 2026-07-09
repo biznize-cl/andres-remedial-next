@@ -332,6 +332,11 @@ export const serviceDetail = {
         image: "/images/tech-needling.jpg",
       },
       {
+        name: "Fire cupping",
+        text: "Warmed glass cups create suction that lifts and decompresses tight tissue, easing tension and supporting circulation.",
+        image: "/images/tech-cupping.jpg",
+      },
+      {
         name: "Movement & rehab guidance",
         text: "Simple exercises and movement advice to carry the progress beyond the table.",
         image: "/images/tech-movement.jpg",
