@@ -53,17 +53,41 @@ export function Hero() {
           </ul>
         </div>
 
-        {/* Real treatment photo. priority: it's the LCP image. */}
+        {/*
+          Collage: the main service (hands-on massage) large, with two
+          techniques (dry needling, cupping) stacked beside it — so visitors
+          read the offering at a glance. Same grid scales on mobile + desktop.
+        */}
         <div className="relative">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-xl2)] border border-cream/15 shadow-2xl">
-            <Image
-              src="/images/hero-treatment.jpg"
-              alt="Andres performing hands-on remedial massage treatment"
-              fill
-              sizes="(max-width: 1024px) 100vw, 45vw"
-              className="object-cover"
-              priority
-            />
+          <div className="grid aspect-[4/5] grid-cols-3 grid-rows-2 gap-3">
+            <div className="relative col-span-2 row-span-2 overflow-hidden rounded-[var(--radius-xl2)] border border-cream/15 shadow-2xl">
+              <Image
+                src="/images/hero-massage.jpg"
+                alt="Andres performing hands-on remedial massage"
+                fill
+                sizes="(max-width: 1024px) 66vw, 30vw"
+                className="object-cover"
+                priority
+              />
+            </div>
+            <div className="relative overflow-hidden rounded-2xl border border-cream/15 shadow-lg">
+              <Image
+                src="/images/hero-needling.jpg"
+                alt="Dry needling during a remedial treatment"
+                fill
+                sizes="(max-width: 1024px) 33vw, 15vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative overflow-hidden rounded-2xl border border-cream/15 shadow-lg">
+              <Image
+                src="/images/hero-cupping.jpg"
+                alt="Cupping during a remedial treatment"
+                fill
+                sizes="(max-width: 1024px) 33vw, 15vw"
+                className="object-cover"
+              />
+            </div>
           </div>
           {/* Floating proof chip — verified from his Google listing. */}
           <div className="absolute -bottom-5 -left-5 hidden rounded-2xl border border-cream/15 bg-brand-dark/80 px-5 py-4 backdrop-blur-sm sm:block">
