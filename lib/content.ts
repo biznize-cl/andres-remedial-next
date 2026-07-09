@@ -108,7 +108,7 @@ export const services: Service[] = [
   {
     name: "Remedial Treatment",
     description:
-      "A tailored, treatment-focused session designed to assess, treat, and address the underlying causes of pain, stiffness, and movement restrictions, helping you recover, move better, and feel your best.",
+      "A tailored, treatment-focused session designed to assess, treat, and address the underlying causes of pain, stiffness, and movement restrictions, helping you recover, move more freely, and feel your best.",
     duration: "60 min",
     price: "$147",
   },
