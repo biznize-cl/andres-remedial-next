@@ -314,22 +314,27 @@ export const serviceDetail = {
       {
         name: "Remedial & deep-tissue massage",
         text: "Targeted work through the muscles and patterns behind your pain.",
+        icon: "hands",
       },
       {
         name: "Trigger point therapy",
         text: "Focused pressure to release the tight points that refer pain elsewhere.",
+        icon: "target",
       },
       {
         name: "Myofascial release",
         text: "Slower, sustained techniques that restore glide and length to restricted tissue.",
+        icon: "layers",
       },
       {
         name: "Dry needling",
         text: "Fine needles into tight bands to release stubborn tension, when it suits your treatment.",
+        icon: "needle",
       },
       {
         name: "Movement & rehab guidance",
         text: "Simple exercises and movement advice to carry the progress beyond the table.",
+        icon: "movement",
       },
     ],
   },

@@ -24,6 +24,54 @@ export const metadata: Metadata = {
   },
 };
 
+/** Line icon per technique, keyed by the `icon` field in content.ts. */
+function TechIcon({ name }: { name: string }) {
+  const p = {
+    fill: "none" as const,
+    stroke: "currentColor",
+    strokeWidth: 1.5,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+  };
+  switch (name) {
+    case "hands":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" {...p}>
+          <path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11m0-6a1.5 1.5 0 0 1 3 0v6m0-4.5a1.5 1.5 0 0 1 3 0V15a5 5 0 0 1-5 5h-1.6a5 5 0 0 1-3.9-1.9l-2.2-2.8a1.6 1.6 0 0 1 2.4-2.1L9 13" />
+        </svg>
+      );
+    case "target":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" {...p}>
+          <circle cx="12" cy="12" r="8" />
+          <circle cx="12" cy="12" r="4" />
+          <circle cx="12" cy="12" r="1" fill="currentColor" stroke="none" />
+        </svg>
+      );
+    case "layers":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" {...p}>
+          <path d="M3 8c3-2 6-2 9 0s6 2 9 0M3 13c3-2 6-2 9 0s6 2 9 0M3 18c3-2 6-2 9 0s6 2 9 0" />
+        </svg>
+      );
+    case "needle":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" {...p}>
+          <path d="M4 20L15 9" />
+          <path d="M14 6l4 4-1.6 1.6-4-4z" />
+        </svg>
+      );
+    case "movement":
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" {...p}>
+          <path d="M3 12h4l2-5 4 10 2-5h6" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
 export default function ServicesPage() {
   return (
     <>
@@ -114,7 +162,10 @@ export default function ServicesPage() {
                 delay={(i % 3) * 80}
                 className="rounded-2xl border border-line bg-limestone p-7"
               >
-                <h3 className="font-display text-lg font-medium text-ink">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-cream text-honey">
+                  <TechIcon name={item.icon} />
+                </span>
+                <h3 className="mt-4 font-display text-lg font-medium text-ink">
                   {item.name}
                 </h3>
                 <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-soft">
