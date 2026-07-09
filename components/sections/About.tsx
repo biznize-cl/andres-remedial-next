@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/Reveal";
@@ -58,6 +59,16 @@ export function About() {
           <blockquote className="mt-9 border-l-2 border-honey pl-5 font-display text-xl leading-relaxed text-ink italic">
             &ldquo;{about.quote}&rdquo;
           </blockquote>
+
+          <Link
+            href="/about"
+            className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-honey-dark transition-colors hover:text-honey"
+          >
+            Read my full story
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
         </div>
       </Container>
     </section>

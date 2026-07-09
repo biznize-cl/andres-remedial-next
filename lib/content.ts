@@ -137,6 +137,46 @@ export const about = {
     "If we can walk confidently and hold our head high without being distracted by pain or discomfort, we can see a clearer vision of our path and how to get there.",
 };
 
+/**
+ * Full biography for the /about page. Andres's own story, first person,
+ * em dashes removed. Credentials and the quote are reused from `about`.
+ */
+export const bio = {
+  eyebrow: "About me",
+  heading: "From competitive sport to remedial therapy.",
+  lead:
+    "I'm Andres, a remedial massage therapist with a strong background in physiotherapy and high-performance sport. My work is focused on helping active individuals, athletes, and people recovering from injury move better, stay mobile, and keep doing the activities they enjoy, whether that's sport, work, or everyday life.",
+  sections: [
+    {
+      heading: "Where it started",
+      body: [
+        "My passion for movement and recovery was shaped early, through my own journey as a competitive tennis player. Growing up in Chile, I competed at a national and international level, reaching No. 1 Under-18 in Chile and No. 23 nationally.",
+        "Through those years I worked closely with physiotherapists and performance professionals, and saw firsthand how good rehabilitation, recovery, and movement education support long-term performance and wellbeing. That experience is what led me to physiotherapy.",
+      ],
+    },
+    {
+      heading: "A foundation in physiotherapy",
+      body: [
+        "I completed a Bachelor of Physiotherapy (Honours) in Chile, working in the musculoskeletal field to design and deliver rehabilitation programs for people of all ages and activity levels. My approach has always been hands-on, practical, and centred on understanding both the physical and psychological demands placed on the body, not only in sport but in daily life.",
+        "Over the years I've worked with a wide range of clients, from professional and semi-professional athletes, including people in AFL, AFLW, and A-League (Women's) environments, to recreational athletes, active adults, and people managing persistent pain or recovering from injury. That breadth lets me tailor treatment to each person's goals, lifestyle, and capacity.",
+      ],
+    },
+    {
+      heading: "Building a practice in Australia",
+      body: [
+        "After immigrating to Australia in 2018, I chose Melbourne as my home, drawn by its strong sporting culture and its connection to tennis as the host city of the Australian Open. Alongside building my clinical career, I spent four years coaching tennis in junior development and adult coaching, which further sharpened my ability to translate rehabilitation principles into practical, real-world movement.",
+        "Since completing my Certificate IV in Massage Therapy and Diploma of Remedial Massage Therapy in Australia, I've established my own practice and work closely with a trusted network of healthcare professionals. I strongly believe that no single practitioner can do everything, and that collaboration is essential to meaningful, long-term outcomes.",
+      ],
+    },
+    {
+      heading: "My philosophy",
+      body: [
+        "My philosophy combines soft tissue therapy, movement education, and client empowerment. My goal isn't just to reduce pain, but to help people move with confidence, maintain independence, and stay active at every stage of life.",
+      ],
+    },
+  ],
+};
+
 export const rebates = {
   eyebrow: "Health funds & rebates",
   heading: "Private health rebates available.",
