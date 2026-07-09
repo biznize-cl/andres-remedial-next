@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { site } from "@/lib/content";
 
 const NAV = [
+  { label: "Home", href: "/" },
   { label: "Treatments", href: "/services" },
   { label: "About", href: "/#about" },
   { label: "Rebates", href: "/#rebates" },

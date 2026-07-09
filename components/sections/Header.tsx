@@ -10,6 +10,7 @@ import { site } from "@/lib/content";
 
 // Treatments is now a real page; the rest are in-page anchors on the home page.
 const NAV = [
+  { label: "Home", hash: "top" },
   { label: "Treatments", route: "/services" },
   { label: "About", hash: "about" },
   { label: "Rebates", hash: "rebates" },
