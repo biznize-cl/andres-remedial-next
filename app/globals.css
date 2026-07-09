@@ -1,23 +1,28 @@
 @import "tailwindcss";
 
 /*
-  Theme — "Coastal layers"
-  Deep eucalyptus-teal brand over warm limestone, sage mid-tones,
-  and a single restrained honey/ochre accent for calls-to-action.
-  Tailwind v4 reads these tokens and generates utilities like
-  bg-brand, text-ink, bg-limestone, text-honey, etc.
+  Theme — anchored on the Andres Remedial logo green (#719B7F).
+  One green identity, tuned into accessible shades:
+    - brand*  : deep green for dark sections (hero, rebates, footer)
+    - honey*  : the brand green (#719B7F) accent + highlights.
+                (Token keeps the name "honey" so components re-theme
+                without edits; it is GREEN now, not ochre.)
+    - cta*    : mid-deep green for buttons so cream text passes WCAG AA
+  Tailwind v4 turns these into utilities: bg-brand, text-honey, bg-cta, etc.
 */
 @theme {
-  --color-brand: #1c3a34; /* deep eucalyptus-teal — dominant brand */
-  --color-brand-dark: #122c27;
-  --color-brand-soft: #2e5249;
-  --color-sage: #7f9686;
-  --color-sage-light: #c8d3c8;
-  --color-honey: #c4892f; /* warm ochre accent (not terracotta) */
-  --color-honey-dark: #a3711f;
+  --color-brand: #2f4a3b; /* deep green — dominant dark sections */
+  --color-brand-dark: #21382c;
+  --color-brand-soft: #3f5e4c;
+  --color-sage: #8aa091; /* muted sage — contours / secondary */
+  --color-sage-light: #c7d6c9; /* light sage — text/badges on dark */
+  --color-honey: #719b7f; /* BRAND GREEN accent (logo colour) */
+  --color-honey-dark: #4a6f55; /* darker green — eyebrow/link text on light */
+  --color-cta: #4d7a60; /* CTA button fill (cream text = AA) */
+  --color-cta-dark: #3d6650; /* CTA button hover */
   --color-limestone: #f3eee3; /* warm page background */
   --color-cream: #faf6ee; /* lighter card surface */
-  --color-ink: #1d2a25; /* primary text — deep teal-charcoal */
+  --color-ink: #1d2a25; /* primary text — deep green-charcoal */
   --color-ink-soft: #51605a; /* secondary text */
   --color-line: #e2dccd; /* hairline borders on light */
 

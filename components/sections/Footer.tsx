@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { site } from "@/lib/content";
 
@@ -17,7 +18,14 @@ export function Footer() {
       <Container className="py-14">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <p className="font-display text-xl text-cream">{site.businessName}</p>
+            <Image
+              src="/logo-badge.png"
+              alt={site.businessName}
+              width={56}
+              height={56}
+              className="h-14 w-14 rounded-full bg-cream p-1"
+            />
+            <p className="mt-4 font-display text-xl text-cream">{site.businessName}</p>
             <p className="mt-3 text-sm leading-relaxed">
               Remedial massage therapy in {site.address.suburb}, on the
               Mornington Peninsula. Treatment-focused, evidence-based, and

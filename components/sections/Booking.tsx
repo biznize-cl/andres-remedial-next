@@ -12,7 +12,7 @@ export function Booking() {
         <SectionHeading
           eyebrow="Book"
           heading="Ready when you are."
-          intro="Choose a time that suits you. New clients welcome — no referral needed."
+          intro="Choose a time that suits you. New clients welcome, no referral needed."
           align="center"
         />
         <div className="mx-auto mt-12 max-w-3xl">

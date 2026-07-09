@@ -16,7 +16,7 @@ export function JsonLd() {
     "@type": "HealthAndBeautyBusiness",
     name: site.businessName,
     description:
-      "Remedial massage therapy in Mornington on the Mornington Peninsula — treatment-focused massage for pain, injury recovery and tension.",
+      "Remedial massage therapy in Mornington on the Mornington Peninsula. Treatment-focused massage for pain, injury recovery and tension.",
     url: site.url,
     telephone: site.phone,
     email: site.email,
@@ -42,19 +42,21 @@ export function JsonLd() {
       "Safety Beach",
       "Dromana",
     ].map((name) => ({ "@type": "City", name })),
-    // Keep in sync with `site.hours` in lib/content.ts.
+    // Keep in sync with `site.hours` in lib/content.ts. Wednesday runs in two
+    // blocks (morning + afternoon/evening). Saturdays are alternate / by
+    // appointment, so they're intentionally omitted from the machine hours.
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: "Wednesday",
         opens: "09:20",
-        closes: "20:00",
+        closes: "12:30",
       },
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Saturday",
-        opens: "09:00",
-        closes: "14:00",
+        dayOfWeek: "Wednesday",
+        opens: "15:00",
+        closes: "20:20",
       },
     ],
     makesOffer: services.map((s) => ({

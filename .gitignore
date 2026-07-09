@@ -38,6 +38,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# raw source assets — optimized copies are committed under public/
+/photos/
+/*.docx
+/*.pdf
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

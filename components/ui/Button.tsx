@@ -6,8 +6,9 @@ const base =
   "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent focus-visible:ring-honey";
 
 const variants: Record<Variant, string> = {
-  // Honey/ochre accent — reserved for the primary booking action.
-  primary: "bg-honey text-cream hover:bg-honey-dark shadow-sm",
+  // Brand-green CTA — reserved for the primary booking action. Uses the
+  // deeper `cta` green so the cream label passes WCAG AA contrast.
+  primary: "bg-cta text-cream hover:bg-cta-dark shadow-sm",
   // Outline that adapts to dark or light backgrounds via currentColor.
   outline:
     "border border-current/30 text-current hover:bg-current/10",

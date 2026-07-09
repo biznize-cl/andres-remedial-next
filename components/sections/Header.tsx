@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -41,10 +42,18 @@ export function Header() {
       <Container className="flex h-16 items-center justify-between sm:h-20">
         <a
           href="#top"
-          className={`font-display text-lg font-medium tracking-tight transition-colors sm:text-xl ${
+          className={`flex items-center gap-2.5 font-display text-lg font-medium tracking-tight transition-colors sm:text-xl ${
             onDark ? "text-cream" : "text-ink"
           }`}
         >
+          <Image
+            src="/logo-badge.png"
+            alt=""
+            width={40}
+            height={40}
+            className="h-9 w-9 rounded-full bg-cream p-0.5 shadow-sm sm:h-10 sm:w-10"
+            priority
+          />
           {site.businessName}
         </a>
 

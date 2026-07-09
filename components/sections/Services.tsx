@@ -1,23 +1,34 @@
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/Reveal";
-import { services } from "@/lib/content";
+import { services, servicesIntro } from "@/lib/content";
 
 /**
- * Services — a card grid of treatments. No numbered markers: these are
- * parallel options, not a sequence, so numbering would imply false order.
+ * Services — the treatment offering(s). Layout adapts to how many services
+ * there are: a single offering is centered, multiple fill a responsive grid.
  */
 export function Services() {
+  const single = services.length === 1;
+
   return (
     <section id="services" className="scroll-mt-20 py-20 sm:py-28">
       <Container>
         <SectionHeading
-          eyebrow="Treatments"
-          heading="Targeted, hands-on remedial work."
-          intro="Every session is assessment-led and tailored to you. Indicative pricing below — your private health rebate brings the out-of-pocket cost down."
+          eyebrow={servicesIntro.eyebrow}
+          heading={servicesIntro.heading}
+          intro={servicesIntro.intro}
         />
+        <p className="mt-5 max-w-2xl text-sm text-ink-soft">
+          {servicesIntro.pricingNote}
+        </p>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div
+          className={
+            single
+              ? "mx-auto mt-14 max-w-md"
+              : "mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          }
+        >
           {services.map((service, i) => (
             <Reveal
               key={service.name}

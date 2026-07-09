@@ -38,7 +38,7 @@ export async function Reviews() {
         rating: 5,
       }));
 
-  const heading = google ? "What our clients say." : "Locals who move better.";
+  const heading = google ? "What my clients say." : "What my clients say.";
 
   return (
     <section className="py-20 sm:py-28">
@@ -100,7 +100,7 @@ export async function Reviews() {
             >
               Google
             </a>
-            . Showing a selection of our most recent.
+            . Showing a selection of my most recent.
           </p>
         ) : null}
       </Container>

@@ -36,7 +36,7 @@ export function BookingEmbed() {
       </p>
       <p className="mx-auto mt-4 max-w-md text-ink-soft">
         Online booking is on its way. For now, the quickest way to lock in a
-        time is a quick call or text — you&rsquo;ll usually get a same-day reply.
+        time is a quick call or text. You&rsquo;ll usually get a same-day reply.
       </p>
       <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <Button href={site.phoneHref} variant="primary">

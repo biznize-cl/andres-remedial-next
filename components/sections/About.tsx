@@ -1,28 +1,27 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Contours } from "@/components/Contours";
 import { Reveal } from "@/components/Reveal";
 import { about, site } from "@/lib/content";
 
 /**
  * About — builds the trust the booking depends on: a real person, a clear
- * method, and verifiable credentials.
+ * method, verifiable credentials, and Andres's own philosophy.
  */
 export function About() {
   return (
     <section id="about" className="scroll-mt-20 bg-cream py-20 sm:py-28">
-      <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        {/* Portrait placeholder */}
-        <Reveal className="order-last lg:order-first">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[var(--radius-xl2)] border border-line bg-sage-light/40">
-            <Contours className="absolute inset-0 h-full w-full text-sage" opacity={0.35} />
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-center text-brand-soft">
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle cx="12" cy="9" r="3.4" stroke="currentColor" strokeWidth="1.4" />
-                <path d="M5 19c1.5-3.2 4-4.5 7-4.5s5.5 1.3 7 4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-              </svg>
-              <span className="text-xs uppercase tracking-[0.2em]">Therapist photo</span>
-            </div>
+      <Container className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+        {/* Portrait */}
+        <Reveal className="order-last lg:order-first lg:sticky lg:top-24">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[var(--radius-xl2)] border border-line shadow-sm">
+            <Image
+              src="/images/andres-portrait.jpg"
+              alt={`${site.therapistName}, ${site.credential}`}
+              fill
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover object-center"
+            />
           </div>
         </Reveal>
 
@@ -33,6 +32,11 @@ export function About() {
               <p key={i}>{p}</p>
             ))}
           </div>
+
+          {/* Experience highlight */}
+          <p className="mt-6 rounded-2xl border border-line bg-limestone/60 p-5 text-[0.95rem] leading-relaxed text-ink-soft">
+            {about.experience}
+          </p>
 
           <p className="mt-8 font-display text-lg text-ink">
             {site.therapistName}
@@ -49,6 +53,11 @@ export function About() {
               </li>
             ))}
           </ul>
+
+          {/* Philosophy pull-quote */}
+          <blockquote className="mt-9 border-l-2 border-honey pl-5 font-display text-xl leading-relaxed text-ink italic">
+            &ldquo;{about.quote}&rdquo;
+          </blockquote>
         </div>
       </Container>
     </section>

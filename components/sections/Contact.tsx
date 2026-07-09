@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { contact, site, faqs } from "@/lib/content";
+import { contact, site, faqGroups } from "@/lib/content";
 
 /**
  * Contact — location, hours, direct contact, an embedded map, and FAQs.
@@ -11,7 +11,7 @@ import { contact, site, faqs } from "@/lib/content";
 export function Contact() {
   const mapQuery =
     process.env.NEXT_PUBLIC_MAP_QUERY ??
-    `${site.address.street}, ${site.address.suburb} ${site.address.state} ${site.address.postcode}`;
+    `${site.address.venue}, ${site.address.street}, ${site.address.suburb} ${site.address.state} ${site.address.postcode}`;
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(mapQuery)}&output=embed`;
 
   return (
@@ -29,6 +29,8 @@ export function Contact() {
             <div>
               <h3 className="eyebrow text-honey-dark">Where</h3>
               <address className="mt-3 not-italic text-lg leading-relaxed text-ink">
+                <span className="font-medium">{site.address.venue}</span>
+                <br />
                 {site.address.street}
                 <br />
                 {site.address.suburb} {site.address.state} {site.address.postcode}
@@ -51,12 +53,13 @@ export function Contact() {
               <h3 className="eyebrow text-honey-dark">Opening hours</h3>
               <dl className="mt-3 divide-y divide-line border-y border-line">
                 {site.hours.map((h) => (
-                  <div key={h.day} className="flex justify-between py-2.5 text-[0.95rem]">
-                    <dt className="text-ink-soft">{h.day}</dt>
-                    <dd className="font-medium text-ink">{h.time}</dd>
+                  <div key={h.day} className="flex justify-between gap-6 py-2.5 text-[0.95rem]">
+                    <dt className="shrink-0 text-ink-soft">{h.day}</dt>
+                    <dd className="text-right font-medium text-ink">{h.time}</dd>
                   </div>
                 ))}
               </dl>
+              <p className="mt-3 text-sm text-ink-soft">{site.hoursNote}</p>
             </div>
 
             <Button href="#book" variant="primary">
@@ -67,7 +70,7 @@ export function Contact() {
           {/* Map */}
           <div className="overflow-hidden rounded-[var(--radius-xl2)] border border-line shadow-sm">
             <iframe
-              title={`Map to ${site.businessName}, ${site.address.suburb}`}
+              title={`Map to ${site.businessName} inside ${site.address.venue}, ${site.address.suburb}`}
               src={mapSrc}
               className="h-full min-h-[360px] w-full"
               loading="lazy"
@@ -76,32 +79,39 @@ export function Contact() {
           </div>
         </div>
 
-        {/* FAQs — native <details> for accessible, JS-free accordions. */}
+        {/* FAQs — grouped, native <details> for accessible, JS-free accordions. */}
         <div className="mx-auto mt-20 max-w-3xl">
           <h3 className="text-center font-display text-2xl text-ink sm:text-3xl">
-            Good to know
+            Before your session
           </h3>
-          <div className="mt-8 space-y-3">
-            {faqs.map((faq) => (
-              <details
-                key={faq.question}
-                className="group rounded-2xl border border-line bg-cream px-6 py-4"
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-ink">
-                  {faq.question}
-                  <svg
-                    className="shrink-0 text-honey transition-transform duration-200 group-open:rotate-45"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    aria-hidden="true"
-                  >
-                    <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                  </svg>
-                </summary>
-                <p className="mt-3 leading-relaxed text-ink-soft">{faq.answer}</p>
-              </details>
+          <div className="mt-10 space-y-10">
+            {faqGroups.map((group) => (
+              <div key={group.title}>
+                <p className="eyebrow text-honey-dark">{group.title}</p>
+                <div className="mt-4 space-y-3">
+                  {group.items.map((faq) => (
+                    <details
+                      key={faq.question}
+                      className="group rounded-2xl border border-line bg-cream px-6 py-4"
+                    >
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-ink">
+                        {faq.question}
+                        <svg
+                          className="shrink-0 text-honey transition-transform duration-200 group-open:rotate-45"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          aria-hidden="true"
+                        >
+                          <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                        </svg>
+                      </summary>
+                      <p className="mt-3 leading-relaxed text-ink-soft">{faq.answer}</p>
+                    </details>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
