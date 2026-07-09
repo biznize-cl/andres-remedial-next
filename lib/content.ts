@@ -125,7 +125,7 @@ export const about = {
   ],
   /** Experience highlight (first person, drawn from the biography). */
   experience:
-    "I work with everyone from professional and semi-professional athletes, including AFL, AFLW and A-League (Women's) environments, to recreational athletes, active adults, and people managing persistent pain or recovering from injury.",
+    "I work with everyone from professional and semi-professional to recreational athletes, active adults, and people managing persistent pain or recovering from injury.",
   credentials: [
     "Bachelor of Physiotherapy (Honours), Chile",
     "Cert IV & Diploma of Remedial Massage, Australia",
@@ -134,7 +134,7 @@ export const about = {
   ],
   /** Philosophy pull-quote (from the biography). */
   quote:
-    "If we can walk confidently and hold our head high without experiencing pain or discomfort, we can see a clearer vision of our path and how to get there.",
+    "If we can walk confidently and hold our head high without being distracted by pain or discomfort, we can see a clearer vision of our path and how to get there.",
 };
 
 export const rebates = {
