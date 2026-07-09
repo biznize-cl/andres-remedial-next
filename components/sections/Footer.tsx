@@ -3,11 +3,11 @@ import { Container } from "@/components/ui/Container";
 import { site } from "@/lib/content";
 
 const NAV = [
-  { label: "Treatments", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Rebates", href: "#rebates" },
-  { label: "Book", href: "#book" },
-  { label: "Visit", href: "#contact" },
+  { label: "Treatments", href: "/services" },
+  { label: "About", href: "/#about" },
+  { label: "Rebates", href: "/#rebates" },
+  { label: "Book", href: "/#book" },
+  { label: "Visit", href: "/#contact" },
 ];
 
 export function Footer() {
@@ -73,7 +73,8 @@ export function Footer() {
         <div className="mt-12 border-t border-cream/10 pt-6">
           <div className="flex flex-col gap-2 text-xs text-sage-light/80 sm:flex-row sm:items-center sm:justify-between">
             <p>
-              &copy; {year} {site.businessName}. {site.abn}.
+              &copy; {year} {site.businessName}.
+              {site.abn ? ` ${site.abn}.` : ""}
             </p>
             <p>Mornington · Mornington Peninsula · Victoria</p>
           </div>

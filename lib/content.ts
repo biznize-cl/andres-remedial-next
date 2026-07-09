@@ -47,7 +47,7 @@ export const site = {
   /** Contact details (phone verified from Google listing). */
   phone: "0493 828 268",
   phoneHref: "tel:+61493828268",
-  email: "hello@andresremedial.com.au", // TODO: confirm real email address
+  email: "remedial.andres@gmail.com",
   /** Clinic address — verified from Google listing. */
   address: {
     venue: "The Chiro Collective",
@@ -59,12 +59,12 @@ export const site = {
   },
   /** Geo coordinates of the clinic (verified from Google listing). */
   geo: { lat: -38.2404, lng: 145.0321 },
-  /** TODO: confirm ABN for the footer, or leave blank to hide. */
-  abn: "ABN 00 000 000 000",
+  /** ABN for the footer. Leave "" to hide the line. */
+  abn: "ABN 57797356052",
   /** Social links. Leave a value empty ("") to hide that icon. */
   socials: {
-    instagram: "", // TODO: add real Instagram URL or leave "" to hide
-    facebook: "", // TODO: add real Facebook URL or leave "" to hide
+    instagram: "https://www.instagram.com/andres.remedial",
+    facebook: "", // none provided — leave "" to hide
   },
   /**
    * Opening hours. If you change these, also update
@@ -231,4 +231,97 @@ export const contact = {
   heading: "Find me inside The Chiro Collective.",
   body:
     "A calm, professional treatment space in the heart of Mornington, with easy parking and online booking available. If you're dealing with pain, stiffness, or a specific injury and you're unsure if treatment is right for you, feel free to reach out. I'm always happy to chat and see if we're the right fit.",
+};
+
+/**
+ * Services page (/services) content.
+ * DRAFT drawn from Andres's bio + the clinic photos. TODO: have Andres confirm
+ * the techniques and "what it helps with" lists before treating as final.
+ */
+export const serviceDetail = {
+  hero: {
+    eyebrow: "Remedial Treatment",
+    heading: "Treatment built around you.",
+    intro:
+      "Every appointment is a full remedial massage treatment, assessment-led and tailored to your body, your history, and what you want to get back to. No two sessions look the same.",
+    price: "$147",
+    duration: "60 min",
+  },
+  process: {
+    eyebrow: "What to expect",
+    heading: "A clear session, every time.",
+    steps: [
+      {
+        title: "Assess",
+        text: "We start with a conversation about your symptoms, lifestyle, and goals, followed by a movement assessment to understand how you move and what's driving the problem.",
+      },
+      {
+        title: "Treat",
+        text: "Hands-on treatment tailored to what we find, combining soft-tissue techniques with the right approach for your body on the day.",
+      },
+      {
+        title: "Plan",
+        text: "You leave knowing what's going on and what to do between sessions, with simple movement or self-care guidance to support your recovery.",
+      },
+    ],
+  },
+  techniques: {
+    eyebrow: "How I work",
+    heading: "Techniques I draw on.",
+    intro:
+      "One session can combine several approaches, chosen for what your body needs on the day.",
+    items: [
+      {
+        name: "Remedial & deep-tissue massage",
+        text: "Targeted work through the muscles and patterns behind your pain.",
+      },
+      {
+        name: "Trigger point therapy",
+        text: "Focused pressure to release the tight points that refer pain elsewhere.",
+      },
+      {
+        name: "Myofascial release",
+        text: "Slower, sustained techniques that restore glide and length to restricted tissue.",
+      },
+      {
+        name: "Dry needling",
+        text: "Fine needles into tight bands to release stubborn tension, when it suits your treatment.",
+      },
+      {
+        name: "Movement & rehab guidance",
+        text: "Simple exercises and movement advice to carry the progress beyond the table.",
+      },
+    ],
+  },
+  helpsWith: {
+    eyebrow: "Who it's for",
+    heading: "What it can help with.",
+    intro:
+      "Remedial treatment supports a wide range of everyday and sporting complaints.",
+    items: [
+      {
+        title: "Persistent pain & tension",
+        text: "Ongoing neck, back, and shoulder tension that keeps returning.",
+      },
+      {
+        title: "Sports & overuse injuries",
+        text: "Recovery and management for training loads, from recreational to elite.",
+      },
+      {
+        title: "Recovery & mobility",
+        text: "Restoring movement and range after injury or long periods of strain.",
+      },
+      {
+        title: "Postural & desk strain",
+        text: "The aches that build from long hours at a desk or on your feet.",
+      },
+    ],
+    note: "Not sure if it's right for your injury? Get in touch before booking and we'll see if we're a good fit.",
+  },
+  pricing: {
+    eyebrow: "Pricing",
+    heading: "Simple and transparent.",
+    body:
+      "$147 for a 60-minute treatment. A 50% deposit confirms your booking, with the balance paid after your session. Remedial massage may be claimable through your private health extras, and you'll receive an itemised invoice to submit to your fund.",
+  },
 };

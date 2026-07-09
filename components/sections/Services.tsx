@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/Reveal";
@@ -55,6 +56,18 @@ export function Services() {
               </p>
             </Reveal>
           ))}
+        </div>
+
+        <div className="mt-10">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-honey-dark transition-colors hover:text-honey"
+          >
+            View treatment details
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
         </div>
       </Container>
     </section>

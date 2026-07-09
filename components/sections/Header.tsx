@@ -1,26 +1,30 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { site } from "@/lib/content";
 
+// Treatments is now a real page; the rest are in-page anchors on the home page.
 const NAV = [
-  { label: "Treatments", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Rebates", href: "#rebates" },
-  { label: "Visit", href: "#contact" },
-];
+  { label: "Treatments", route: "/services" },
+  { label: "About", hash: "about" },
+  { label: "Rebates", hash: "rebates" },
+  { label: "Visit", hash: "contact" },
+] as const;
 
 /**
- * Header — transparent over the dark hero, then settles into a solid
- * limestone bar once the user scrolls past it. The booking CTA is always
- * present so the primary action is never more than a glance away.
+ * Header — transparent over the dark hero, then settles into a solid bar on
+ * scroll. Anchors are path-aware: on the home page they scroll in-page; on
+ * other routes (e.g. /services) they point back to "/#…" so they still work.
  */
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const onHome = usePathname() === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -30,6 +34,10 @@ export function Header() {
   }, []);
 
   const onDark = !scrolled;
+  const anchor = (hash: string) => (onHome ? `#${hash}` : `/#${hash}`);
+  const linkClass = `text-sm font-medium transition-colors hover:text-honey ${
+    onDark ? "text-cream/85" : "text-ink-soft"
+  }`;
 
   return (
     <header
@@ -41,7 +49,7 @@ export function Header() {
     >
       <Container className="flex h-16 items-center justify-between sm:h-20">
         <a
-          href="#top"
+          href={onHome ? "#top" : "/"}
           className={`flex items-center gap-2.5 font-display text-lg font-medium tracking-tight transition-colors sm:text-xl ${
             onDark ? "text-cream" : "text-ink"
           }`}
@@ -58,18 +66,18 @@ export function Header() {
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {NAV.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={`text-sm font-medium transition-colors hover:text-honey ${
-                onDark ? "text-cream/85" : "text-ink-soft"
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
-          <Button href="#book" variant="primary">
+          {NAV.map((item) =>
+            "route" in item ? (
+              <Link key={item.label} href={item.route} className={linkClass}>
+                {item.label}
+              </Link>
+            ) : (
+              <a key={item.label} href={anchor(item.hash)} className={linkClass}>
+                {item.label}
+              </a>
+            ),
+          )}
+          <Button href={anchor("book")} variant="primary">
             Book now
           </Button>
         </nav>
@@ -96,18 +104,21 @@ export function Header() {
       {open ? (
         <div className="border-t border-line bg-limestone md:hidden">
           <Container className="flex flex-col gap-1 py-4">
-            {NAV.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-2 py-3 text-base font-medium text-ink hover:bg-cream"
-              >
-                {item.label}
-              </a>
-            ))}
+            {NAV.map((item) => {
+              const href = "route" in item ? item.route : anchor(item.hash);
+              return (
+                <a
+                  key={item.label}
+                  href={href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-lg px-2 py-3 text-base font-medium text-ink hover:bg-cream"
+                >
+                  {item.label}
+                </a>
+              );
+            })}
             <Button
-              href="#book"
+              href={anchor("book")}
               variant="primary"
               className="mt-2"
               onClick={() => setOpen(false)}
