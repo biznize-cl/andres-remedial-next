@@ -119,7 +119,7 @@ export const about = {
   heading: "Treatment that listens before it works.",
   paragraphs: [
     "I'm Andres, a remedial massage therapist based on the Mornington Peninsula. My approach is built around understanding the bigger picture, not just where it hurts, but why it hurts.",
-    "With a background in physiotherapy and high-performance sport, shaped by my own years as a nationally ranked tennis player in Chile, I focus on how the whole body moves, not just the sore spot.",
+    "With a background in physiotherapy and high-performance sport, shaped by years competing at national and international level in tennis, I focus on how the whole body moves, not just the sore spot.",
     "Every session begins with a proper assessment: how you move, what aggravates things, and what you want to get back to. From there, treatment is tailored to your body, your goals, and your lifestyle.",
     "My focus is simple: helping you reduce pain, move more freely, and get back to doing what you love.",
   ],
