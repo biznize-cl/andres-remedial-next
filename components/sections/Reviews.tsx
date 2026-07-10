@@ -70,15 +70,22 @@ export async function Reviews() {
           ) : null}
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        {/* Bento: the first review is a wide featured card, the rest fill in. */}
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map((card, i) => (
             <Reveal
               key={card.key}
-              delay={i * 90}
-              className="flex h-full flex-col rounded-2xl border border-line bg-cream p-7"
+              delay={i * 80}
+              className={`flex h-full flex-col rounded-2xl border border-line bg-cream p-7 ${
+                i === 0 ? "sm:col-span-2" : ""
+              }`}
             >
               <StarRating rating={card.rating} className="text-honey" />
-              <blockquote className="mt-4 flex-1 text-[1.02rem] leading-relaxed text-ink">
+              <blockquote
+                className={`mt-4 flex-1 leading-relaxed text-ink ${
+                  i === 0 ? "text-lg sm:text-xl" : "text-[1.02rem]"
+                }`}
+              >
                 {card.text}
               </blockquote>
               <footer className="mt-6 border-t border-line pt-4">

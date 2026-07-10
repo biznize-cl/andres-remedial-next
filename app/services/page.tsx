@@ -10,6 +10,19 @@ import { serviceDetail, site } from "@/lib/content";
 
 const s = serviceDetail;
 
+// Bento layout for the six technique tiles (index-based, matches the order in
+// serviceDetail.techniques.items). The feature is a 2x2; long-named cards like
+// IASTM sit in wide cells; the two short-named cards are small squares.
+// Same spans work on the 2-col mobile grid and the 4-col desktop grid.
+const TECH_BENTO = [
+  { span: "col-span-2 row-span-2", full: true }, // Remedial & Deep Tissue (feature)
+  { span: "col-span-1", full: false }, // Dry Needling (small)
+  { span: "col-span-1", full: false }, // Fire Cupping (small)
+  { span: "col-span-2", full: true }, // IASTM (wide)
+  { span: "col-span-2", full: true }, // Joint Mobilisation (wide)
+  { span: "col-span-2", full: true }, // Movement & Rehab (wide)
+];
+
 export const metadata: Metadata = {
   title: "Remedial Massage Treatment",
   description:
@@ -107,31 +120,40 @@ export default function ServicesPage() {
             heading={s.techniques.heading}
             intro={s.techniques.intro}
           />
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {s.techniques.items.map((item, i) => (
-              <Reveal
-                key={item.name}
-                delay={(i % 3) * 80}
-                className="group relative flex min-h-[320px] flex-col justify-end overflow-hidden rounded-2xl border border-cream/10 shadow-sm"
-              >
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/55 to-brand-dark/5" />
-                <div className="relative p-6 text-cream">
-                  <h3 className="font-display text-lg font-medium">
-                    {item.name}
-                  </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-sage-light">
-                    {item.text}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+          <div className="mt-14 grid auto-rows-[11rem] grid-cols-2 gap-4 sm:auto-rows-[12rem] md:grid-cols-4">
+            {s.techniques.items.map((item, i) => {
+              const b = TECH_BENTO[i] ?? { span: "", full: true };
+              return (
+                <Reveal
+                  key={item.name}
+                  delay={(i % 3) * 70}
+                  className={`group relative flex h-full flex-col justify-end overflow-hidden rounded-2xl border border-cream/10 shadow-sm ${b.span}`}
+                >
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/55 to-brand-dark/5" />
+                  <div className="relative p-5 sm:p-6 text-cream">
+                    <h3
+                      className={`font-display font-medium ${
+                        i === 0 ? "text-xl sm:text-2xl" : "text-lg"
+                      }`}
+                    >
+                      {item.name}
+                    </h3>
+                    {b.full ? (
+                      <p className="mt-1.5 text-sm leading-relaxed text-sage-light">
+                        {item.text}
+                      </p>
+                    ) : null}
+                  </div>
+                </Reveal>
+              );
+            })}
           </div>
         </Container>
       </section>
