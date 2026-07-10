@@ -274,9 +274,7 @@ export const contact = {
 };
 
 /**
- * Services page (/services) content.
- * DRAFT drawn from Andres's bio + the clinic photos. TODO: have Andres confirm
- * the techniques and "what it helps with" lists before treating as final.
+ * Services page (/services) content — copy provided and confirmed by the client.
  */
 export const serviceDetail = {
   hero: {
@@ -293,15 +291,15 @@ export const serviceDetail = {
     steps: [
       {
         title: "Assess",
-        text: "We start with a conversation about your symptoms, lifestyle, and goals, followed by a movement assessment to understand how you move and what's driving the problem.",
+        text: "We begin with a conversation about your symptoms, lifestyle and goals, followed by a movement assessment to understand how your body moves and what may be contributing to your symptoms.",
       },
       {
         title: "Treat",
-        text: "Hands-on treatment tailored to what we find, combining soft-tissue techniques with the right approach for your body on the day.",
+        text: "Your treatment is tailored to your assessment, using the techniques most appropriate for your body, your goals, and how you're feeling on the day.",
       },
       {
         title: "Plan",
-        text: "You leave knowing what's going on and what to do between sessions, with simple movement or self-care guidance to support your recovery.",
+        text: "You leave with a clear understanding of what's going on and what to do between sessions, with simple movement or self-care strategies to support your recovery.",
       },
     ],
   },
@@ -312,33 +310,33 @@ export const serviceDetail = {
       "One session can combine several approaches, chosen for what your body needs on the day.",
     items: [
       {
-        name: "Remedial & deep-tissue massage",
-        text: "Targeted work through the muscles and patterns behind your pain.",
+        name: "Remedial & Deep Tissue Massage",
+        text: "Hands-on treatment to relieve muscle tension, improve tissue quality and restore comfortable movement.",
         image: "/images/tech-remedial.jpg",
       },
       {
-        name: "Trigger point therapy",
-        text: "Focused pressure to release the tight points that refer pain elsewhere.",
-        image: "/images/tech-trigger.jpg",
-      },
-      {
-        name: "Myofascial release",
-        text: "Slower, sustained techniques that restore glide and length to restricted tissue.",
-        image: "/images/tech-myofascial.jpg",
-      },
-      {
-        name: "Dry needling",
-        text: "Fine needles into tight bands to release stubborn tension, when it suits your treatment.",
+        name: "Dry Needling",
+        text: "Targets persistent muscle tightness and trigger points that haven't responded to hands-on treatment alone.",
         image: "/images/tech-needling.jpg",
       },
       {
-        name: "Fire cupping",
-        text: "Warmed glass cups create suction that lifts and decompresses tight tissue, easing tension and supporting circulation.",
+        name: "Fire Cupping",
+        text: "Uses suction cups to reduce muscle tightness, improve tissue mobility and complement hands-on treatment.",
         image: "/images/tech-cupping.jpg",
       },
       {
-        name: "Movement & rehab guidance",
-        text: "Simple exercises and movement advice to carry the progress beyond the table.",
+        name: "Instrument-Assisted Soft Tissue Mobilisation (IASTM)",
+        text: "Specialised tools are used to improve tissue mobility, reduce muscle tightness and support recovery.",
+        image: "/images/tech-iastm.jpg",
+      },
+      {
+        name: "Joint Mobilisation",
+        text: "Gentle techniques used to restore joint movement and reduce stiffness where mobility is restricted.",
+        image: "/images/tech-jointmob.jpg",
+      },
+      {
+        name: "Movement & Rehab Guidance",
+        text: "Simple exercises and movement strategies to help you recover and stay moving between sessions.",
         image: "/images/tech-movement.jpg",
       },
     ],
@@ -350,23 +348,23 @@ export const serviceDetail = {
       "Remedial treatment supports a wide range of everyday and sporting complaints.",
     items: [
       {
-        title: "Persistent pain & tension",
-        text: "Ongoing neck, back, and shoulder tension that keeps returning.",
+        title: "Persistent Pain & Tension",
+        text: "Ongoing neck, back, shoulder and hip pain or muscle tension that keeps returning.",
       },
       {
-        title: "Sports & overuse injuries",
-        text: "Recovery and management for training loads, from recreational to elite.",
+        title: "Sports & Overuse Injuries",
+        text: "Helping active people recover from sporting injuries, training overload and repetitive strain.",
       },
       {
-        title: "Recovery & mobility",
-        text: "Restoring movement and range after injury or long periods of strain.",
+        title: "Mobility & Recovery",
+        text: "Improve movement, reduce stiffness and regain confidence after injury or surgery.",
       },
       {
-        title: "Postural & desk strain",
-        text: "The aches that build from long hours at a desk or on your feet.",
+        title: "Work & Lifestyle Strain",
+        text: "Aches and stiffness from long hours at a desk, physical work or everyday life.",
       },
     ],
-    note: "Not sure if it's right for your injury? Get in touch before booking and we'll see if we're a good fit.",
+    note: "Not sure if treatment is right for you? Get in touch, I'm happy to answer your questions before you book.",
   },
   pricing: {
     eyebrow: "Pricing",
